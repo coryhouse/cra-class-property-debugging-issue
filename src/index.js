@@ -24,19 +24,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        This actually works fine in Sandbox because it must be using a different
-        source-map setting (even though it claims to be using cra). But
-        cheap-module-source-map (the create-react-app default) apparently
-        doesn't support debugging inside class fields. :( The solution: Use
-        eval-source-map and it works fine!
         <ol>
           <li>Open dev tools</li>
           <li>Click the bound increment button</li>
-          <li>Note that you can hover over this.state in the click handler</li>
+          <li>
+            Note that you can hover over this.state in the click handler to
+            inspect it
+          </li>
           <li>Click the class property increment</li>
           <li>
             Hover over this.state in the click handler, and note that it
-            displays as undefined, so you can't debug :(
+            displays as undefined, even though it actually is defined :(
           </li>
         </ol>
         {this.state.counter}{" "}
@@ -44,6 +42,13 @@ class App extends React.Component {
         <br />
         {this.state.counter}{" "}
         <button onClick={this.incrementProperty}>+ Class property</button>
+        <p>
+          This actually works fine in Sandbox because it must be using a
+          different source-map setting (even though it claims to be using cra).
+          But cheap-module-source-map (the create-react-app default) apparently
+          doesn't support debugging inside class fields. :( One solution: Use
+          eval-source-map (eject required) and it works fine.
+        </p>
       </div>
     );
   }
