@@ -28,13 +28,19 @@ class App extends React.Component {
           <li>Open dev tools</li>
           <li>Click the bound increment button</li>
           <li>
-            Note that you can hover over this.state in the click handler to
-            inspect it
+            Note that{" "}
+            <a href="https://www.dropbox.com/s/cjvxiyjagnzm9cz/Screenshot%202018-09-02%2013.17.36.png?dl=0">
+              you can hover over this.state in the click handler to inspect it
+            </a>
           </li>
           <li>Click the class property increment</li>
           <li>
-            Hover over this.state in the click handler, and note that it
-            displays as undefined, even though it actually is defined :(
+            Hover over this.state in the click handler, and{" "}
+            <a href="https://www.dropbox.com/s/6zfiqfzl1ezgqgg/Screenshot%202018-09-02%2013.18.01.png?dl=0">
+              note that it displays as undefined, even though it actually is
+              defined
+            </a>{" "}
+            :(
           </li>
         </ol>
         {this.state.counter}{" "}
